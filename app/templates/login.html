@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+  	<div class="container">
+  		<h1><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Survey Meddle</h1>
+  	</div>
+    
+	<script type="text/javascript">
+		function set_openid(openid, pr)
+		{
+    		u = openid.search('<username>')
+    		if (u != -1) {
+        		// openid requires username
+        		user = prompt('Enter your ' + pr + ' username:')
+        		openid = openid.substr(0, u) + user
+    		}
+    		form = document.forms['login'];
+    		form.elements['openid'].value = openid
+		}
+	</script>
+
+	<div class = 'signin'>
+		<div class = 'container'>
+			<div id="login" class="col-md-4">
+				<h4>Sign In</h4>
+				<form action="" method="post" name="login">
+   				 {{ form.hidden_tag() }}
+    				<p class>
+        				Please enter your OpenID, or select one of the providers below:<br>
+        				{{ form.openid(size=80) }}
+        				{% for error in form.openid.errors %}
+          					<span style="color: red;">[{{error}}]</span>
+        				{% endfor %}<br>
+        				|{% for pr in providers %}
+          				<a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
+        				{% endfor %}
+    				</p>
+    			    <p class="signin"><input type="submit" value="Sign In"></p>
+				</form>
+       		</div>
+       		<div id="new" class="col-md-4">
+       			<h4>Need people to take your survey?</h4>
+				<p>Survey Meddle audience has millions of qualified respondents ready to take your surveys </p>
+				<img src='https://secure.surveymonkey.com/smassets/usercontentsvc/2015.7.24.418.post27/assets/audience.png'>
+       		</div>
+    	</div>
+	</div>
+  </body>
+</html>
+

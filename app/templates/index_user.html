@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app_user.js') }}"></script>
+  	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Identify the event</title>
+  </head>
+  <body>
+  <div class="container">
+  		<h1><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Survey Meddle</h1>
+  </div>
+  <div class="nav">
+      <div class="container">
+        
+        <ul class="pull-right">
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  	<div class="jumbotron"	
+  		<div class="container">
+        <p align = "center">This is an audio/video detection survey.</br>
+       Please answer the simple questions associated with each video and submit your answers</br>
+        <img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR2FCjMp6z6vBB8I6whZG6yMBabrUqi07Mc_giLzEBqOOaIygye'></p>
+      </div>
+  		
+  	</div>
+  	<div class="questions">
+    <div class="container">
+    	
+        <div class="col-md-4" >
+        	<h4>Video 1</h4>
+				<h4>Identify the event</h4>
+    				<div class="form-group">
+        				<div class="videoUiWrapper thumbnail">
+            				<video width="100%" id="vdHotPress" controls>
+            <!-- set width to 100% and add controls for play and volume buttons-->
+                				<source src="pathtovideo/video.ogv" type="video/ogv" />
+                				<source src="pathtovideo/video.mp4" type="video/mp4" />
+                				Your browser does not support the video tag.
+            				</video>
+        				</div>
+    				</div>
+				</div>
+		<div class="col-md-8" >
+		<div class="pull-right">
+    
+        
+            <p>1. What do you think this video is about?</p>
+           <div class="radio">
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Birthday">Birthday</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Graduation">Graduation</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Wedding">Wedding</label>
+			</div>
+            
+            <p>2. What helped you arrive at his decision?</p>
+            <div class="form-group">
+  				<input type='textbox' class="form-control" id='textbox' >
+			</div>
+            
+            <p>3. Was audio or video more relevant to your decision?</p>
+            <div class="radio">
+            	<label class="radio-inline"><input type="radio" name="which_type" value="Audio">Audio</label>
+				<label class="radio-inline"><input type="radio" name="which_type" value="Video">Video</label>
+			</div>
+            <p>4. How confident are you with your answer?</p>
+            <div class="radio">
+  				Not at all sure <label class="radio-inline"><input type="radio" name="percent" value="1"> 1</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="2"> 2</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="3"> 3</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="4"> 4</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="5"> 5 </label> Completely sure
+			</div>
+            </br>
+            </br>
+            <div class="pull-right">
+            	<button class="btn btn-default" id= 'submitbutton' type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="col-md-4" >
+			<h4>Video 2</h4>
+				<h4>Identify the event</h4>
+    				<div class="form-group">
+        				<div class="videoUiWrapper thumbnail">
+            				<video width="100%" id="vdHotPress" controls>
+            <!-- set width to 100% and add controls for play and volume buttons-->
+                				<source src="pathtovideo/video.ogv" type="video/ogv" />
+                				<source src="pathtovideo/video.mp4" type="video/mp4" />
+                				Your browser does not support the video tag.
+            				</video>
+        				</div>
+    				</div>
+				</div>
+		<div class="col-md-8" >
+		<div class="pull-right">
+    
+        
+            <p>1. What do you think this video is about?</p>
+           <div class="radio">
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Birthday">Birthday</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Graduation">Graduation</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Wedding">Wedding</label>
+			</div>
+            
+            <p>2. What helped you arrive at his decision?</p>
+            <div class="form-group">
+  				<input type='textbox' class="form-control" id='textbox' >
+			</div>
+            
+            <p>3. Was audio or video more relevant to your decision?</p>
+            <div class="radio">
+            	<label class="radio-inline"><input type="radio" name="which_type" value="Audio">Audio</label>
+				<label class="radio-inline"><input type="radio" name="which_type" value="Video">Video</label>
+			</div>
+            <p>4. How confident are you with your answer?</p>
+            <div class="radio">
+  				Not at all sure <label class="radio-inline"><input type="radio" name="percent" value="1"> 1</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="2"> 2</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="3"> 3</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="4"> 4</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="5"> 5 </label> Completely sure
+			</div>
+            </br>
+            </br>
+            <div class="pull-right">
+            	<button class="btn btn-default" id= 'submitbutton' type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="container">
+        <div class="col-md-4" >   
+			<h4>Video 3</h4>
+				<h4>Identify the event</h4>
+    				<div class="form-group">
+        				<div class="videoUiWrapper thumbnail">
+            				<video width="100%" id="vdHotPress" controls>
+            <!-- set width to 100% and add controls for play and volume buttons-->
+                				<source src="pathtovideo/video.ogv" type="video/ogv" />
+                				<source src="pathtovideo/video.mp4" type="video/mp4" />
+                				Your browser does not support the video tag.
+            				</video>
+        				</div>
+    				</div>
+				</div>
+		<div class="col-md-8">
+		<div class="pull-right">
+   
+        
+            <p>1. What do you think this video is about?</p>
+           <div class="radio">
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Birthday">Birthday</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Graduation">Graduation</label>
+			
+			
+  				<label class="radio-inline"><input type="radio" name="optradio" value="Wedding">Wedding</label>
+			</div>
+            
+            <p>2. What helped you arrive at his decision?</p>
+            <div class="form-group">
+  				<input type='textbox' class="form-control" id='textbox' >
+			</div>
+            
+            <p>3. Was audio or video more relevant to your decision?</p>
+            <div class="radio">
+            	<label class="radio-inline"><input type="radio" name="which_type" value="Audio">Audio</label>
+				<label class="radio-inline"><input type="radio" name="which_type" value="Video">Video</label>
+			</div>
+            <p>4. How confident are you with your answer?</p>
+            <div class="radio">
+  				Not at all sure <label class="radio-inline"><input type="radio" name="percent" value="1"> 1</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="2"> 2</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="3"> 3</label>
+				<label class="radio-inline"><input type="radio" name="percent" value="4"> 4</label>
+  				<label class="radio-inline"><input type="radio" name="percent" value="5"> 5 </label> Completely sure
+			</div>
+            </br>
+            </br>
+            <div class="pull-right">
+            	<button class="btn btn-default" id= 'submitbutton' type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

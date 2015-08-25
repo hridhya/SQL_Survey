@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='app_create.js') }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%if title %}
+		<title>{{title}} - Survey</title>
+	{% else %}
+		<title>Survey Meddle</title>
+	{% endif%}
+  </head>
+
+  <body>
+  	<div class="container">
+  		<h1><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Survey Meddle</h1>
+  	</div>
+  	<div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">How it works</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  	<div class = "jumbotron">
+  		<h1 align="center">Post your video/audio links</br><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GHCU-hxA7bbOofeLZ1Mzkr9KrGZoHe5O7Ql6X69KRy_nncokXw'></h1>	
+  		<p align="center">Upgrade for additional features</p>
+  	</div>
+  	<div class = "container">
+  		<div class="col-xs-4">
+  			<div id='TextBoxesGroup'>
+  			<style type="text/css">
+ 				div{
+ 					padding:8px;
+ 				}
+			</style>
+			<div id="TextBoxDiv1">
+				<input type='textbox' class="form-control" placeholder="Audio/video link" id='textbox1' >	
+			</div>
+			</div>
+			</br>
+			<div class="btn-group" role="group">
+  				<button class="btn btn-default"id='addButton'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+				<button class="btn btn-default"id='removeButton'><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
+  				<button class="btn btn-default" id= 'submitbutton' type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+  			</div>
+  		</div>
+  	</div>
+  </body>
+</html>

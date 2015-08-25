@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='app_results.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='app_graphs.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='app_create.js') }}"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%if title %}
+		<title>{{title}} - Survey</title>
+	{% else %}
+		<title>Survey Meddle</title>
+	{% endif%}
+  </head>
+
+  <body>
+  	<div class="container">
+  		<h1><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Survey Meddle</h1>
+  	</div>
+  	<div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">How it works</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Create Surveys, Get Answers</h1>
+        <p>Upgrade for more features</p>
+      </div>
+    </div> 
+	<div class="container">
+		<div class="col-md-8" >
+			<div class="pull-left">
+				<h2>Create a new survey <a href = '/create_new'> <span class="glyphicon glyphicon-glyphicon glyphicon-plus-sign" aria-hidden="true"></span> </a></h2>
+				<p>You can create a new survey by clicking on the +. Be ready with the audio/video links!</p>
+			</div>
+		</div>
+		<div class="col-md-4" >
+			<div class="pull-right">
+				<h2>Your surveys</h2>
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  				<div class="panel panel-default">
+    				<div class="panel-heading" role="tab" id="headingOne">
+      					<h4 class="panel-title">
+        				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          				Survey 1 
+        				</a>
+      					</h4>
+    				</div>
+    				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      					<div class="panel-body">
+        				<strong><span id="result0"></span></strong> people took this survey.</br>
+        				1.What part of the video helped to identify: <strong><span id="result1"></span></strong></br>
+        				2.Audio or Video: <strong><span id="result2"></span></strong></br>
+        				3.How confident are you: <strong><span id="result3"></span></strong></br>
+        				<div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        				23 <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
+      					</div>
+    				</div>
+  				</div>
+  				<div class="panel panel-default">
+    				<div class="panel-heading" role="tab" id="headingTwo">
+      					<h4 class="panel-title">
+        				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          				Survey 2
+        				</a>
+      					</h4>
+    				</div>
+    				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      					<div class="panel-body">
+        				15 people took this survey.</br>
+        				<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        				 13 <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> 
+      					</div>
+    				</div>
+  				</div>
+  				<div class="panel panel-default">
+   					<div class="panel-heading" role="tab" id="headingThree">
+      					<h4 class="panel-title">
+        				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          				Survey 3
+        				</a>
+     		 			</h4>
+    				</div>
+    				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      					<div class="panel-body">
+        				225 people took this survey.</br>
+        				<div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        				30 <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> 
+      					</div>
+    				</div>
+  				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	

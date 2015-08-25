@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+  	<div class="container">
+  		<h1><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Survey Meddle</h1>
+  	</div>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">How it works</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Create Surveys, Get Answers</h1>
+        <p>The basics are always free. Upgrade for more powerful features.</p>
+      </div>
+    </div> 
+
+    <div class="learn-more">
+	  <div class="container">
+		<div class="row">
+	  	  <div class="col-md-4">
+			<h3>Survey your target market</h3>
+			<p>Survey Meddle audience has millions of people ready to take your survey.</p>
+			<img src='https://secure.surveymonkey.com/smassets/anonweb/anonweb/2112-anonweb-0170.1/assets/home-audience.png'>
+			<p><a href="#">Learn More</a></p>
+		  </div>
+		  <div class="col-md-4">
+			<h3>Want more power and multiple users?</h3>
+			<p>Get our most powerful features and make smarter decisions</p>
+			<img src='https://secure.surveymonkey.com/smassets/anonweb/anonweb/2112-anonweb-0170.1/assets/home-enterprise.png'>
+			<p><a href="#">Learn More</a></p>
+	      </div>
+		  <div class="col-md-4">
+			<h3>Give your results more context</h3>
+			<p>Compare your survey data with graphs</p>
+			<img src='https://secure.surveymonkey.com/smassets/anonweb/anonweb/2112-anonweb-0170.1/assets/home-benchmarks.png'>
+			<p><a href="#">Learn More</a></p>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+  </body>
+</html>
