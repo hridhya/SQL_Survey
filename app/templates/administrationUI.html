@@ -27,7 +27,7 @@
       <div class="container">
         <ul class="pull-left">
           <li><a href="#">Home</a></li>
-          <li><a href="#">How it works</a></li>
+          <li><a href="{{ url_for('details') }}">How it works</a></li>
         </ul>
         <ul class="pull-right">
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -40,8 +40,9 @@
   		<p align="center"><a href="#">Upgrade for additional features</a></p>
   	</div>
   	<div class = "container">
+  	 <p>Links with extensions .ogg, .mpeg, .ogv, .mp4 are supported and valid</p>
   		<div class="col-xs-4">
-  			<div id='TextBoxesGroup'>
+  		 <div id='TextBoxesGroup'>
   			<style type="text/css">
  				div{
  					padding:8px;

@@ -49,18 +49,24 @@ def new():
 	user = g.user
 	return render_template('administrationUI.html',user=user)
 	
+@app.route('/details')                       
+def details():
+	user = g.user
+	return render_template('details.html',user=user)
+	
 @app.route('/create_new', methods=['POST'])
 @login_required
 def my_posts():
 	data = str(request.get_json())
 	words = data.split()
-	print g.user
-	l = len(words)
-	for i in range(l):
-		survey = Survey(post = words[i], author = g.user)
-	print survey
-	db.session.add(survey)
-	db.session.commit()
+	if not words:
+  		print "There are no audio/video links to add."
+  	else:
+		l = len(words)
+		for i in range(l):
+			survey = Survey(post = words[i], author = g.user)
+		db.session.add(survey)
+		db.session.commit()
 	return data
 	
 	

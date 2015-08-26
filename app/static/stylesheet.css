@@ -64,3 +64,10 @@ input[type="text"] {
 	height: 500px;
 }
 
+.container p{
+  font-family: 'Shift', sans-serif;
+  color: #5a5a5a;
+  font-size: 15px;
+  font-weight: bold;
+}	
+
