@@ -29,20 +29,21 @@ class User(db.Model):
     
 class Survey(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    post1 = db.Column(db.String(140))
-    post2 = db.Column(db.String(140))
-    post3 = db.Column(db.String(140))
-    post4 = db.Column(db.String(140))
-    post5 = db.Column(db.String(140))
-    post6 = db.Column(db.String(140))
-    post7 = db.Column(db.String(140))
-    post8 = db.Column(db.String(140))
-    post9 = db.Column(db.String(140))
-    post10 = db.Column(db.String(140))
+    post = db.Column(db.String(140))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    results = db.relationship('Results', backref='survey_no.', lazy='dynamic')
 
     def __repr__(self):
-        return '<Questions %r>' % (self.post1)
+        return '<Questions %r>' % (self.post)
         
         
-        
+class Results(db.Model):
+     id = db.Column(db.Integer, primary_key = True)   
+     ans1 = db.Column(db.String(140)) 
+     ans2 = db.Column(db.String(140))   
+     ans3 = db.Column(db.String(140))   
+     ans4 = db.Column(db.String(140)) 
+     result_id = db.Column(db.Integer, db.ForeignKey('survey.id')) 
+     
+     def __repr__(self):
+        return '<Answer %r>' % (self.ans1)   

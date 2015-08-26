@@ -31,6 +31,7 @@ $(document).ready(function() {
      		$("#submitbutton").click(function () {
      			var msg = '';
 				for(i=1; i<counter; i++){
+				
    	  				msg += "\n " + $('#textbox' + i).val();
    	  			}
    	  		

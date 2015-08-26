@@ -55,7 +55,10 @@ def my_posts():
 	data = str(request.get_json())
 	words = data.split()
 	print g.user
-	survey = Survey(post1 = words[0], author = g.user)
+	l = len(words)
+	for i in range(l):
+		survey = Survey(post = words[i], author = g.user)
+	print survey
 	db.session.add(survey)
 	db.session.commit()
 	return data
