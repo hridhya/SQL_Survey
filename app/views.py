@@ -63,8 +63,8 @@ def my_posts():
   		print "There are no audio/video links to add."
   	else:
 		l = len(words)
-		for i in range(l):
-			survey = Survey(post = words[i], author = g.user)
+		for i in range(1,l):
+			survey = Survey(post = words[i], author = g.user, survey_name = words[0])
 		db.session.add(survey)
 		db.session.commit()
 	return data
