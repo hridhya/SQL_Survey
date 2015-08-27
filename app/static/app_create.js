@@ -2,7 +2,7 @@ $(document).ready(function() {
   			var counter = 2;
   			$("#addButton").click(function () {
   				if(counter>10){
-            		alert("Only 10 textboxes allow");
+            		bootbox.alert("Only 10 textboxes allow");
             		return false;
 				}
 				
@@ -17,7 +17,7 @@ $(document).ready(function() {
      		});  
      		$("#removeButton").click(function () {
 				if(counter==1){
-          			alert("No more textbox to remove");
+          			bootbox.alert("No more textbox to remove");
           			return false;
        			}   
         
@@ -26,26 +26,33 @@ $(document).ready(function() {
         		$("#TextBoxDiv" + counter).remove();
 			
      		}); 
-     	
      
      		$("#submitbutton").click(function () {
-     			var msg = '';
+     			var msg = $('#survey_name').val();
 				for(i=1; i<counter; i++){
 					var pos1 = $('#textbox' + i).val().indexOf(".ogg");
+					console.log(pos1);
 					var pos2 = $('#textbox' + i).val().indexOf(".mpeg");
 					var pos3 = $('#textbox' + i).val().indexOf(".ogv");
 					var pos4 = $('#textbox' + i).val().indexOf(".mp4");
 					var pos5 = $('#textbox' + i).val().indexOf(" ");
 					console.log(pos1, pos2, pos3, pos4, pos5);
-					if ((pos1< 0) || (pos2< 0) || (pos3< 0) || (pos4< 0) || (pos5>= 0)){
-						alert("Please enter a valid link");
+					if ((pos1< 0) && (pos2< 0) && (pos3< 0) && (pos4< 0)){
+						bootbox.alert("Please enter a valid link");
 						continue;
 					}
+					
+					else if (pos5>=0){
+						bootbox.alert("White spaces are not permitted");
+						continue;
+					}
+					
 					else{
+					
    	  					msg += "\n " + $('#textbox' + i).val();
    	  				}
    	  			}
-   	  		
+					
    	  			$.ajax({
     				url: "/create_new",
     				type: "POST",
